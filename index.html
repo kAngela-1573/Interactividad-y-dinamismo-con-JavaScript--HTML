@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante con la mejor comida italiana. Reserva ya tu mesa.">
+    <meta name="keywords" content="restaurante, comida, italiana, reservas, menú">
+    <meta name="author" content="Nelson Aranibar">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Restaurante - Reserva ya">
+    <meta property="og:description" content="El mejor restaurante italiano de la ciudad.">
+    <meta property="og:type" content="website">
+
+    <title>Recreación de Diseño Web</title>
+     
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== SECCIÓN 1: ENCABEZADO ===== -->
+    <header id="seccion-encabezado">
+
+        <figure class="barra-superior">
+            <figcaption>LOGO</figcaption>
+        </figure>
+
+        <nav class="menu-navegacion" aria-label="Navegación principal">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <label for="menu-toggle" class="menu-overlay-backdrop"></label>
+
+            <div class="menu-overlay">
+                <label for="menu-toggle" class="close-btn" aria-label="Cerrar menú">&times;</label>
+                <div class="menu-overlay-content">
+                    <ul>
+                        <li><a href="javascript:void(0)">MENÚ</a></li>
+                        <li><a href="javascript:void(0)">MENÚ</a></li>
+                        <li><a href="javascript:void(0)">MENÚ</a></li>
+                        <li><a href="javascript:void(0)">MENÚ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner-principal" role="banner">
+            <hgroup>
+                <h1>TITULO 1</h1>
+                <h2>TITULO 2</h2>
+            </hgroup>
+            <button class="boton-reserva" type="button" id="btn-reserva" title="Haz tu reserva ahora" accesskey="r">
+                Reserva ya
+            </button>
+        </div>
+
+        <hr class="franja-gris">
+
+    </header>
+
+
+    <main>
+
+        <!-- ===== SECCIÓN 2: SOBRE NOSOTROS-TUTORIAL ===== -->
+        <article id="seccion-intermedia">
+
+            <section class="columna-izquierda" aria-labelledby="titulo-nosotros">
+                <h2 id="titulo-nosotros" class="sobre-nosotros-titulo">TITULO 2</h2>
+                <h3 class="sobre-nosotros-subtitulo">TITULO 3</h3>
+
+                <figure class="contenedor-imagen">
+                    <img
+                        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+                        alt="Pareja cocinando juntos en una cocina moderna"
+                        width="600" height="240" loading="lazy"
+                    >
+                    <figcaption>Nuestro equipo en acción</figcaption>
+                </figure>
+
+                <p class="sobre-nosotros-texto">
+                    <strong>Lorem Ipsum</strong> is simply dummy text of the
+                    <em>printing and typesetting</em> industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since.
+                    Creado con <abbr title="HyperText Markup Language">HTML</abbr> semántico.
+                </p>
+
+                <details>
+                    <summary>Leer más sobre nosotros</summary>
+                    <p>
+                        Fundado en 2010, hemos servido a más de <mark>50,000 comensales</mark>
+                        satisfechos usando ingredientes frescos y locales en cada platillo.
+                    </p>
+                </details>
+            </section>
+
+            <aside class="columna-derecha" aria-label="Destacados del menú">
+                <h3 class="sobre-nosotros-subtitulo">TITULO 3</h3>
+
+                <article class="item-menu-secundario">
+                    <div class="item-menu-texto">
+                        <h4 class="item-menu-titulo toggle-titulo">
+                            TITULO 4 <span class="toggle-icon">▼</span>
+                        </h4>
+                        <p class="item-menu-descripcion">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                    <figure style="margin:0;">
+                        <img
+                            src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=200&q=80"
+                            alt="Plato de pasta italiana con salsa de tomate"
+                            width="120" height="90" loading="lazy"
+                        >
+                    </figure>
+                </article>
+
+                <article class="item-menu-secundario">
+                    <div class="item-menu-texto">
+                        <h4 class="item-menu-titulo toggle-titulo">
+                            TITULO 4 <span class="toggle-icon">▼</span>
+                        </h4>
+                        <p class="item-menu-descripcion">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
+                    <figure style="margin:0;">
+                        <img
+                            src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=200&q=80"
+                            alt="Tomates frescos del jardín"
+                            width="120" height="90" loading="lazy"
+                        >
+                    </figure>
+                </article>
+            </aside>
+
+        </article>
+
+
+        <!-- ===== SECCIÓN 3: CONTACTO ===== -->
+        <section id="seccion-contacto" aria-labelledby="titulo-contacto">
+
+            <div class="seccion-izquierda">
+                <h2 id="titulo-contacto" class="contacto-titulo">TITULO 2</h2>
+                <p class="contacto-subtitulo">TITULO 3</p>
+
+                <table class="tabla-titulos" id="tabla-principal">
+                    <caption style="display:none;">Tabla de horarios y disponibilidad</caption>
+                    <colgroup>
+                        <col style="width:20%"><col style="width:20%"><col style="width:20%">
+                        <col style="width:20%"><col style="width:20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">TITULO</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-body">
+                        <tr><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td></tr>
+                        <tr><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td></tr>
+                        <tr><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td></tr>
+                        <tr><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td><td>Texto</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="font-size:11px; color:#999; text-align:center; padding:6px;">
+                                * Sujeto a disponibilidad
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="tabla-botones">
+                    <button class="btn-tabla btn-agregar" id="btn-agregar-fila">Agregar fila</button>
+                    <button class="btn-tabla btn-eliminar" id="btn-eliminar-fila">Eliminar última fila</button>
+                </div>
+
+                <address class="iconos-sociales">
+                    <h3>TITULO 3</h3>
+                    <nav aria-label="Redes sociales">
+                        <ul class="iconos-redes">
+                            <li>
+                                <a href="https://instagram.com" class="icono-red icono-instagram"
+                                   target="_blank" rel="noopener noreferrer"
+                                   title="Instagram" aria-label="Visitar Instagram">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white" aria-hidden="true">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://youtube.com" class="icono-red icono-youtube"
+                                   target="_blank" rel="noopener noreferrer"
+                                   title="YouTube" aria-label="Visitar YouTube">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white" aria-hidden="true">
+                                        <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://facebook.com" class="icono-red icono-facebook"
+                                   target="_blank" rel="noopener noreferrer"
+                                   title="Facebook" aria-label="Visitar Facebook">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white" aria-hidden="true">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/51999999999" class="icono-red icono-whatsapp"
+                                   target="_blank" rel="noopener noreferrer"
+                                   title="WhatsApp" aria-label="Contactar por WhatsApp">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white" aria-hidden="true">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </address>
+            </div>
+
+            <div class="seccion-derecha">
+                <div class="mapa-placeholder" role="img" aria-label="Mapa de ubicación del restaurante">
+                    <iframe
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-71.9800%2C-13.5200%2C-71.9600%2C-13.5050&layer=mapnik&marker=-13.5125%2C-71.9761"
+                        title="Ubicación del restaurante en la Plaza de Armas, Cusco"
+                        width="100%" height="220"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+                <form class="formulario-contacto" id="form-contacto" action="#" method="post" novalidate aria-labelledby="titulo-form">
+                    <h3 id="titulo-form">TITULO 3</h3>
+                    <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry.</p>
+
+                    <fieldset style="border:none; padding:0; display:contents;">
+                        <legend style="display:none;">Datos de contacto</legend>
+
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre"
+                               placeholder="Nombre" required
+                               autocomplete="name" minlength="2" maxlength="60">
+                        <span class="mensaje-error" id="error-nombre"></span>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo"
+                               placeholder="Correo electrónico" required
+                               autocomplete="email">
+                        <span class="mensaje-error" id="error-correo"></span>
+
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto">
+                            <option value="" disabled selected>Selecciona un asunto</option>
+                            <optgroup label="Servicios">
+                                <option value="reserva">Reserva de mesa</option>
+                                <option value="pedido">Pedido especial</option>
+                            </optgroup>
+                            <optgroup label="Soporte">
+                                <option value="consulta">Consulta general</option>
+                                <option value="reclamo">Reclamo</option>
+                            </optgroup>
+                        </select>
+                        <span class="mensaje-error" id="error-asunto"></span>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje"
+                                  placeholder="Mensaje" required
+                                  minlength="10" maxlength="500"></textarea>
+                        <span class="mensaje-error" id="error-mensaje"></span>
+                    </fieldset>
+
+                    <button type="submit" class="boton-enviar">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===== SECCIÓN 4: FOOTER ===== -->
+    <footer id="seccion-footer">
+
+        <nav class="menu-navegacion-footer" aria-label="Navegación del pie de página">
+            <ul>
+                <li><a href="javascript:void(0)">MENÚ</a></li>
+                <li><a href="javascript:void(0)">MENÚ</a></li>
+                <li><a href="javascript:void(0)">MENÚ</a></li>
+                <li><a href="javascript:void(0)">MENÚ</a></li>
+            </ul>
+        </nav>
+
+        <div class="bloques-enlaces">
+            <section class="enlace-columna" aria-labelledby="col1">
+                <h4 id="col1">subtitulo</h4>
+                <ul>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                </ul>
+            </section>
+            <section class="enlace-columna" aria-labelledby="col2">
+                <h4 id="col2">subtitulo</h4>
+                <ul>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                </ul>
+            </section>
+            <section class="enlace-columna" aria-labelledby="col3">
+                <h4 id="col3">subtitulo</h4>
+                <ul>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                </ul>
+            </section>
+            <section class="enlace-columna" aria-labelledby="col4">
+                <h4 id="col4">subtitulo</h4>
+                <ul>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                    <li><a href="javascript:void(0)">Enlace</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="barra-derechos">
+            <small>© <time datetime="2022">2022</time> Nelson Aranibar. Todos los derechos reservados.</small>
+        </div>
+
+    </footer>
+   
+</body>
+
+<script src="js/script.js"></script>
+
+</html>
