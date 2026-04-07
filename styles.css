@@ -1,0 +1,341 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { font-family: Arial, sans-serif; color: #333; background-color: white; }
+
+        /* ===== SECCIÓN 1 ===== */
+        .barra-superior { background-color: #8CC63F; padding: 14px 20px; color: black; font-weight: bold; font-size: 22px; }
+
+        /* NAV RESPONSIVE - Con checkbox */
+        .menu-navegacion {
+            background-color: #111;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 50px;
+            position: relative;
+            min-height: 60px;
+        }
+
+        /* Ocultar el checkbox */
+        .menu-toggle {
+            display: none;
+        }
+
+        /* Icono de hamburguesa */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 14px 0;
+            z-index: 10000;
+            position: relative;
+        }
+
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animación hamburguesa → X cuando el checkbox está checked */
+        .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .close-btn {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            z-index: 10001;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: -80px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            max-height: 80px;
+            background-color: #111;
+            z-index: 9999;
+            transition: top 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow-y: visible;
+        }
+
+        /* Mostrar menú cuando el checkbox está checked */
+        .menu-toggle:checked ~ .menu-overlay {
+            top: 0;
+        }
+
+        .menu-overlay-content {
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .menu-overlay ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-overlay ul li {
+            margin: 0;
+            border-right: 1px solid #333;
+        }
+
+        .menu-overlay ul li:last-child {
+            border-right: none;
+        }
+
+        .menu-overlay ul li a {
+            color: #999;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .menu-overlay ul li a:hover {
+            background-color: #cccccc;
+            color: #000000;
+            transform: translateY(-2px);
+        }        
+
+        /* Overlay de fondo oscuro cuando el menú está abierto */
+        .menu-overlay-backdrop {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;      
+        }
+
+        .menu-toggle:checked ~ .menu-overlay-backdrop {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* BANNER — títulos y botón centrados */
+        .banner-principal {
+            height: 420px;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+        }
+        .banner-principal h1 { font-size: 42px; font-weight: 900; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); margin-bottom: 4px; }
+        .banner-principal h2 { font-size: 26px; font-weight: bold; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); margin-bottom: 28px; }
+
+        .boton-reserva { background-color: #E67E22; color: white; padding: 12px 32px; border: none; border-radius: 30px; font-size: 15px; font-weight: bold; cursor: pointer; }
+
+        hr.franja-gris { height: 6px; background-color: #D5D5D5; border: none; }
+
+        /* ===== SECCIÓN 2 ===== */
+        #seccion-intermedia { background-color: #F0F4E8; padding: 50px 60px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: start; }
+
+        .columna-izquierda .sobre-nosotros-titulo { font-size: 30px; font-weight: 900; text-align: center; margin-bottom: 4px; color: #222; }
+        .columna-izquierda .sobre-nosotros-subtitulo { font-size: 16px; color: #888; text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 22px; }
+
+        .contenedor-imagen img { width: 100%; height: 240px; object-fit: cover; border-radius: 4px; display: block; }
+        .contenedor-imagen figcaption { font-size: 12px; color: #999; text-align: center; margin-top: 6px; }
+
+        .sobre-nosotros-texto { margin-top: 22px; line-height: 1.65; color: #444; font-size: 15px; }
+
+        .columna-derecha .sobre-nosotros-subtitulo {
+            font-size: 16px;
+            color: #888;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .item-menu-secundario { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; justify-content: flex-end; }
+        .item-menu-secundario img { width: 120px; height: 90px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+        .item-menu-texto { text-align: right; }
+        .item-menu-titulo {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 6px;
+            color: #222;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 6px;
+        }
+        .item-menu-titulo .toggle-icon { 
+            font-size: 12px; 
+            transition: transform 0.3s; 
+            display: inline-block; 
+        }
+        .item-menu-titulo.collapsed .toggle-icon {    transform: rotate(-90deg); }
+        .item-menu-descripcion { font-size: 13px; 
+            color: #666; 
+            line-height: 1.45; 
+            transition: all 0.3s; 
+        }
+        .item-menu-descripcion.hidden { display: none; }
+
+        details { margin-top: 16px; color: #555; font-size: 13px; }
+        details summary { cursor: pointer; font-weight: bold; color: #8CC63F; }
+        details p { margin-top: 8px; line-height: 1.6; }
+
+        /* ===== SECCIÓN 3 ===== */
+        #seccion-contacto { background-color: #F0F4E8; display: grid; grid-template-columns: 1fr 1fr; }
+
+        .seccion-izquierda { padding: 50px 50px 50px 60px; }
+        .contacto-titulo { font-size: 30px; font-weight: 900; text-align: center; color: #222; margin-bottom: 4px; }
+        .contacto-subtitulo { font-size: 16px; color: #888; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 28px; }
+
+        .tabla-titulos { border-collapse: collapse; width: 100%; }
+        .tabla-titulos th { background-color: #8CC63F; color: white; padding: 10px 8px; text-align: center; font-weight: bold; font-size: 13px; border: 1px solid #8CC63F; }
+        .tabla-titulos td { background-color: white; padding: 10px 8px; text-align: center; font-size: 13px; border-bottom: 1px solid #eee; border-left: 1px solid #eee; border-right: 1px solid #eee; }
+        .tabla-titulos tr:nth-child(even) td { background-color: #f9f9f9; }
+
+        .tabla-botones { margin-top: 12px; display: flex; gap: 10px; }
+        .btn-tabla {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn-agregar { background-color: #8CC63F; color: white; }
+        .btn-eliminar { background-color: #e74c3c; color: white; }
+
+        .iconos-sociales { margin-top: 36px; font-style: normal; }
+        .iconos-sociales h3 { color: #777; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 15px; margin-bottom: 14px; }
+        .iconos-redes { display: flex; gap: 14px; align-items: center; list-style: none; padding: 0; margin: 0; }
+
+        .icono-red { width: 44px; height: 44px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; flex-shrink: 0; }
+        .icono-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .icono-youtube   { background-color: #FF0000; }
+        .icono-facebook  { background-color: #1877F2; }
+        .icono-whatsapp  { background-color: #25D366; }
+
+        .seccion-derecha { display: flex; flex-direction: column; }
+
+        .mapa-placeholder { width: 100%; height: 220px; background-color: #e5e3df; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .mapa-placeholder svg { width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
+
+        .formulario-contacto { background-color: #111; padding: 36px 44px 44px; display: flex; flex-direction: column; gap: 14px; border-top: 5px solid white; flex: 1; }
+        .formulario-contacto h3 { color: white; font-size: 20px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+        .formulario-contacto p { color: #ccc; font-size: 13px; line-height: 1.5; margin-bottom: 6px; }
+        .formulario-contacto label { color: #aaa; font-size: 12px; margin-bottom: -8px; }
+        .formulario-contacto input,
+        .formulario-contacto textarea,
+        .formulario-contacto select {
+            background-color: white; border: 1px solid #ddd; padding: 12px 14px;
+            color: #555; border-radius: 4px; font-size: 14px; font-family: Arial, sans-serif; outline: none;
+        }
+        .formulario-contacto input::placeholder,
+        .formulario-contacto textarea::placeholder { color: #aaa; }
+        .formulario-contacto textarea { height: 90px; resize: none; }
+
+        .campo-error { border: 1px solid #e74c3c !important; }
+        .mensaje-error { color: #e74c3c; font-size: 11px; margin-top: -10px; display: block; }
+
+        .boton-enviar { background-color: #E67E22; color: white; padding: 12px 30px; border: none; border-radius: 4px; font-size: 15px; font-weight: bold; cursor: pointer; align-self: center; letter-spacing: 1px; }
+
+        /* ===== FOOTER ===== */
+        #seccion-footer { background-color: #111; color: white; }
+
+        .menu-navegacion-footer { background-color: #1a1a1a; display: flex; justify-content: center; padding: 14px 50px; border-bottom: 1px solid #333; }
+        .menu-navegacion-footer ul { list-style: none; display: flex; gap: 60px; margin: 0; padding: 0; }
+        .menu-navegacion-footer a { color: white; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
+
+        .bloques-enlaces {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 40px 60px;
+            text-align: left;
+            background-color: #2a2a2a;
+        }
+
+        .enlace-columna { padding: 0 20px 0 10px; }
+        .enlace-columna:not(:last-child) { border-right: 1px solid #444; }
+        .enlace-columna h4 { font-size: 18px; font-weight: bold; margin-bottom: 16px; color: white; }
+        .enlace-columna ul { list-style: none; padding: 0; margin: 0; }
+        .enlace-columna a { display: block; color: #ccc; text-decoration: none; font-size: 13px; margin-bottom: 8px; }
+
+        .barra-derechos { background-color: #111; border-top: 1px solid #333; padding: 18px 20px; font-size: 12px; color: #666; text-align: center; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-overlay {
+                max-height: 60px;
+                top: -60px;
+            }
+            
+            .menu-overlay ul {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            
+            .menu-overlay ul li a {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            
+            .menu-overlay-backdrop {
+                top: 60px;
+                height: calc(100vh - 60px);
+            }
+            
+            .close-btn {
+                right: 15px;
+                font-size: 24px;
+            }
+        }
